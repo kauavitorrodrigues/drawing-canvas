@@ -1,30 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenhando no Canvas</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas draw</title>
     <link rel="stylesheet" href="assets/style/style.css" />
-</head>
-<body>
-    <h1>Desenhando no Canvas</h1>
+  </head>
+  <body>
+    <header>
+      <h1>Canvas draw</h1>
+    </header>
 
-    <canvas id="tela" width="800" height="400"></canvas>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="brushColor">
+            <div class="brushContent">
+              <div class="colorTitle">
+                <h1>COLOR</h1>
+              </div>
 
-    <div class="colorArea">
-        <div data-color="black" style="background-color: black" class="color active"></div>
-        <div data-color="blue" style="background-color: blue" class="color"></div>
-        <div data-color="red" style="background-color: red" class="color"></div>
-        <div data-color="green" style="background-color: green" class="color"></div>
-        <div data-color="yellow" style="background-color: yellow" class="color"></div>
-        <div data-color="gray" style="background-color: gray" class="color"></div>
-    </div>
+              <div class="colorArea">
+                <div
+                  data-color="black"
+                  style="background-color: black"
+                  class="color active"
+                ></div>
+                <div
+                  data-color="blue"
+                  style="background-color: blue"
+                  class="color"
+                ></div>
+                <div
+                  data-color="red"
+                  style="background-color: red"
+                  class="color"
+                ></div>
+                <div
+                  data-color="green"
+                  style="background-color: green"
+                  class="color"
+                ></div>
+                <div
+                  data-color="yellow"
+                  style="background-color: yellow"
+                  class="color"
+                ></div>
+                <div
+                  data-color="gray"
+                  style="background-color: gray"
+                  class="color"
+                ></div>
+              </div>
+            </div>
+          </div>
 
-    <button class="clear">Limpar Quadro</button>
+          <div class="tools">
+            <div class="toolsContent">
+              <div class="toolsTitle">
+                <h1>Tool</h1>
+              </div>
 
-    <footer>Criado por <a href="">Kauã</a></footer>
+              <div class="toolsIcon">
+                <div class="img activeTool">
+                  <img class="brush" src="assets/img/color-pencil.png" alt="" />
+                </div>
+                <div class="img">
+                  <img
+                    class="bucket"
+                    src="assets/img/paint-bucket.png"
+                    alt=""
+                  />
+                </div>
+                <div class="img">
+                  <img class="eraser" src="assets/img/eraser-tool.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!--"https://www.flaticon.com/free-icons/pencil" Pencil icons created by Sebastian Belalcazar - Flaticon-->
+          <!--"https://www.flaticon.com/free-icons/paint-bucket" Paint bucket icons created by juicy_fish - Flaticon-->
+          <!--"https://www.flaticon.com/free-icons/eraser" title="eraser icons">Eraser icons created by Radhe Icon - Flaticon-->
+
+        </div>
+
+        <div class="canvas">
+          <canvas id="tela" width="800" height="400"></canvas>
+        </div>
+
+        <div class="buttons">
+          <button class="clear btn">Clear canvas</button>
+          <button class="convert btn">Export</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Criado por <a href="">Kauã</a></p>
+
+      <div class="waves">
+          <div class='air air1'></div>
+          <div class='air air2'></div>
+          <div class='air air3'></div>
+          <div class='air air4'></div>
+      </div>
+    
+    </footer>
+    
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>

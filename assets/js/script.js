@@ -3,8 +3,12 @@
 let currentColor = 'black' // Canvas default color
 let screen = document.querySelector('#tela') // Canvas Draw field
 
-let context = screen.getContext('2d') // Canvas draw context
 let canDraw = false // Canvas Draw permission controller
+let context = screen.getContext('2d') // Canvas draw context
+
+// Canvas default background color
+context.fillStyle = 'white'
+context.fillRect(0, 0, screen.width, screen.height)
 
 // Canvas mouse horizontal and vertical initial declaration
 let mouseX; 
@@ -25,6 +29,8 @@ screen.addEventListener('mouseup', mouseUpEvent)
 // Resets canvas field
 document.querySelector('.clear').addEventListener('click', clearScreen)
 
+// Exports canvas draw to image and downloads it
+document.querySelector('.convert').addEventListener('click', canvasImg)
 
 // ------------------------------- FUNCTIONS -----------------------------------
 
@@ -60,6 +66,7 @@ function mouseUpEvent() {
     mouseY = undefined
 }
 
+// Canvas draw mode
 function draw(x, y) {
 
     // Vertical (y-axis)  and  horizontal (x-axis) position relative to the canvas screen
@@ -86,4 +93,20 @@ function draw(x, y) {
 function clearScreen() {
     context.setTransform(1, 0, 0, 1, 0, 0)
     context.clearRect(0, 0, context.canvas.width, context.canvas.height)
+}
+
+// Convert the canvas to an image and download it
+function canvasImg() {
+
+    // Canvas draw to data URL
+    let dataURL = screen.toDataURL('image/png')
+   
+    // Link element (a) with the data URL as the href
+    let link = document.createElement('a')
+    link.href = dataURL
+
+    // Download image
+    link.download = 'imagem.png'
+    link.click()
+
 }

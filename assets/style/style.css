@@ -1,58 +1,227 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #353535;
 }
 
-h1 {
-    color: #FFF;
-    margin-bottom: 20px;
+header {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: #2a2b2a;
+}
+
+header h1 {
+  color: white;
+  font-size: 2em;
+  margin-left: 30px;
+}
+
+main {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #2a2b2a;
+  border-radius: 15px;
+
+  width: 95%;
+  height: 150px;
+  margin-bottom: 20px;
 }
 
 #tela {
-    border: 2px solid #000;
-    background-color: #FFF;
-    cursor: crosshair;
+  background-color: #fff;
+  cursor: crosshair;
+}
+
+.brushContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .colorArea {
-    width: 800px;
-    display: flex;
-}
-.color {
-    flex: 1;
-    height: 40px;
-    cursor: pointer;
-}
-.color.active {
-    border: 5px solid #FFF;
+  display: flex;
 }
 
-.clear {
-    border: 1px solid #000;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #FFF;
-    padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
+.colorTitle h1,
+.toolsTitle h1 {
+  color: #2a2b2a;
+  text-transform: uppercase;
+  text-align: center;
+
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 5px 40px 5px 40px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  background-color: #ffffff;
+}
+
+.color {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.418);
+}
+.color.active {
+  border: 2px solid #fff;
+}
+
+.tools {
+  margin-left: 40px;
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+
+  background-color: white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.img:nth-child(1) {
+  margin-left: 0;
+}
+
+img {
+  width: 25px;
+  height: auto;
+}
+
+.activeTool {
+  border: 2px solid #000000;
+}
+
+.toolsContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toolsIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cfcfcf;
+  border-radius: 20px;
+  width: 180px;
+  height: 60px;
+}
+
+.btn {
+  border: 0;
+  background-color: #272727;
+  color: #ffffff;
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
 }
 
 footer {
-    margin-top: 20px;
-    color: #FFF;
-    font-size: 13px;
+  color: white;
+  font-size: 1em;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer a {
-    color: white;
+  color: white;
+}
+
+.waves {
+  background: #3586ff;
+  overflow: hidden;
+}
+.waves .air {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px;
+}
+.waves .air.air1 {
+  animation: wave 40s linear infinite;
+  z-index: 1000;
+  opacity: .2;
+  animation-delay: 0s;
+  bottom: 0;
+}
+.waves .air.air2 {
+  animation: wave2 30s linear infinite;
+  z-index: 999;
+  opacity: 0.2;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+.waves .air.air3 {
+  animation: wave 25s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+.waves .air.air4 {
+  animation: wave2 20s linear infinite;
+  z-index: 997;
+  opacity: 0.2;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+@keyframes wave {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
 }
