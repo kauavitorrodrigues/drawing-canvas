@@ -48,7 +48,7 @@ main {
   border-radius: 15px;
 
   width: 95%;
-  height: 150px;
+  height: 15vh;
   margin-bottom: 20px;
 }
 
@@ -69,17 +69,28 @@ main {
 }
 
 .colorTitle h1,
-.toolsTitle h1 {
+.toolsTitle h1,
+.sizeTittle {
   color: #2a2b2a;
   text-transform: uppercase;
   text-align: center;
 
   font-size: 0.9em;
   font-weight: 500;
-  padding: 5px 40px 5px 40px;
   margin-bottom: 10px;
-  border-radius: 30px;
   background-color: #ffffff;
+}
+
+.colorTitle h1,
+.toolsTitle h1 {
+  padding: 5px 40px 5px 40px;
+  border-radius: 30px;
+}
+
+.sizeTittle {
+  margin-left: 35px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 30px;
 }
 
 .color {
@@ -94,29 +105,33 @@ main {
 
 .tools {
   margin-left: 40px;
+  margin-right: 40px;
 }
 
-.img {
-  width: 40px;
-  height: 40px;
-  margin-left: 10px;
-
+.tool {
+  width: 50px;
+  height: 50px;
   background-color: white;
   border-radius: 50%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 8px;
   cursor: pointer;
+  margin-right: 5px;
+  border: 2px solid #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60%;
 }
 
-.img:nth-child(1) {
-  margin-left: 0;
+#brush {
+  background-image: url(/assets/img/color-pencil.png);
 }
 
-img {
-  width: 25px;
-  height: auto;
+#bucket {
+  background-image: url(/assets/img/paint-bucket.png);
+}
+
+#eraser {
+  background-image: url(/assets/img/eraser-tool.png);
 }
 
 .activeTool {
@@ -140,18 +155,82 @@ img {
   height: 60px;
 }
 
+.bottomControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.sizeControls {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 120px;
+  border-radius: 15px;
+  background-color: #2a2b2a;
+}
+
+.brushSizeControls,
+.eraserSizeControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.eraserSizeControls {
+  margin-left: 25px;
+}
+
+.size p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2a2b2a;
+  text-transform: uppercase;
+  text-align: center;
+
+  font-size: 0.9em;
+  margin-right: 5px;
+  font-weight: 500;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
 .btn {
   border: 0;
   background-color: #272727;
   color: #ffffff;
   width: 150px;
   height: 50px;
-  margin-top: 20px;
   cursor: pointer;
   border-radius: 30px;
   text-transform: uppercase;
   font-size: 0.7em;
   font-weight: 600;
+}
+
+.btn:nth-child(1) {
+  margin-right: 10px;
 }
 
 footer {
@@ -183,7 +262,7 @@ footer a {
 .waves .air.air1 {
   animation: wave 40s linear infinite;
   z-index: 1000;
-  opacity: .2;
+  opacity: 0.2;
   animation-delay: 0s;
   bottom: 0;
 }
